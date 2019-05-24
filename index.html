@@ -10,7 +10,9 @@
   <h1 title="this is first heading">Introduction to VueJS</h1>
   <!-- Using this app id for the Vue instance -->
   <div id="app">
+    <!-- using v-bind directive we can bind data properties to any HTML tag attribute -->
     <span v-bind:title="date">
+      <!-- Using the double curly braces we are binding the Vue app data properties to our HTML. Vue will replace the property used inside the double curly braces with its set value -->
       {{ message }} 
       {{ courseCode }}
     </span>
@@ -26,9 +28,16 @@
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   
   <script>
+    // Starting with creating a new instance of the Vue and saving it in a variable app
     var app = new Vue({
+      // el is the property of the Vue instance used to define in which element Vue will be loaded
       el: '#app',
+      /* 
+        data property of Vue instance is used to define data for our app
+        data property is set to an object
+      */
       data: {
+        // we can define property names and set their initial values for this data object
         message: 'Welcome to our first VueJS app. Hope you enjoy the Vue!',
         courseCode: 'MTM6430',
         date: 'The date is ' + new Date().toLocaleString(),
